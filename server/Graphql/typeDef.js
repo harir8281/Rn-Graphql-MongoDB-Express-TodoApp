@@ -8,6 +8,7 @@ const typeDefs = gql`
   }
   type Query {
     getAllTodos: [Todo]
+    getOneTodoById(id:ID):Todo
   }
 
   input TodoInput {
@@ -17,6 +18,8 @@ const typeDefs = gql`
 
   type Mutation {
     createTodo(todo: TodoInput): Todo
+    deleteTodo(id:ID):String
+    updateTodo(id:ID,todo:TodoInput):Todo
   }
 `;
 
